@@ -708,6 +708,17 @@ span {
     border: none;
     outline: none;
     transition: all 0.15s ease;
+    pointer-events: auto;
+    -webkit-appearance: slider-horizontal;
+    -moz-appearance: slider-horizontal;
+}
+
+/* Hide any input spinners or extra UI */
+.volume-slider::-webkit-outer-spin-button,
+.volume-slider::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    display: none;
 }
 
 .volume-slider::-webkit-slider-runnable-track {
@@ -718,22 +729,63 @@ span {
 
 .volume-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    height: 14px;
-    width: 14px;
-    background-color: #1bd760;
+    height: 0;
+    width: 0;
+    background-color: transparent;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+    visibility: hidden;
 }
 
 .volume-slider::-moz-range-thumb {
-    height: 14px;
-    width: 14px;
-    background-color: #1bd760;
+    height: 0;
+    width: 0;
+    background-color: transparent;
     border-radius: 50%;
     cursor: pointer;
     border: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+    visibility: hidden;
+}
+
+/* Keep the slider thumb vertically centered inside the rounded container */
+.volume-control {
+    align-items: center;
+    height: 24px;
+    /* gives vertical space so thumb can be centered */
+}
+
+.volume-slider {
+    display: block;
+    /* prevent baseline alignment issues */
+    margin: 0;
+    height: 14px;
+    /* match thumb size to keep it centered */
+    align-self: center;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    margin-top: 0;
+    /* override any browser defaults */
+    transform: translateY(0);
+}
+
+.volume-slider::-moz-range-thumb {
+    transform: translateY(0);
+}
+
+/* Position slider on its track line */
+.volume-slider::-webkit-slider-runnable-track {
+    margin: 0;
+    padding: 0;
+}
+
+.volume-slider::-moz-range-track {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* Now playing overlay and animation */
