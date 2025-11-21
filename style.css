@@ -14,6 +14,13 @@ body {
     margin: 10px 10px 10px 10px;
 }
 
+/* Add bottom padding so fixed music player doesn't cover content */
+/* .main {
+    padding-bottom: 115px;
+    90px player height + 25px visible gap
+}
+*/
+
 .sidebar {
     /* background-color: #121212; */
     height: calc(100vh - 72px);
@@ -58,9 +65,9 @@ body {
 }
 
 .nav .nav-option {
-    font-size: 15px;
+    font-size: 20px;
     margin-left: 30px;
-    opacity: 0.7;
+    /* opacity: 0.7; */
 
 }
 
@@ -83,7 +90,7 @@ body {
     font-size: 14px;
     outline: none;
     transition: all 0.3s ease;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .search-box::placeholder {
@@ -97,10 +104,19 @@ body {
 }
 
 .library {
+    /* make library a vertical flex container and the scroll container */
+    display: flex;
+    flex-direction: column;
     height: calc(80% - 12px);
     background-color: #121212;
     border-radius: 10px;
-    /* padding-top: 10px; */
+    box-sizing: border-box;
+    overflow-y: auto;
+    /* scroll the whole library so header can be sticky */
+    padding-right: 8px;
+    /* room for the scrollbar without creating a second one */
+    padding-bottom: 20px;
+    /* use .main padding to control the bottom spacing so gap is exact */
 }
 
 .library a {
@@ -114,12 +130,17 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-left: 30px;
-    padding-top: 20px;
+    margin: 20px 10px 10px 10px;
+    /* keep header visible while scrolling */
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background: #121212;
 }
 
 .options .lib-option {
     font-size: 15px;
-    opacity: 0.7;
+    /* opacity: 0.7; */
 }
 
 .options .lib-option:hover {
@@ -157,7 +178,7 @@ body {
 }
 
 .icons .icon2 {
-    opacity: 0.7;
+    /* opacity: 0.7; */
     padding-right: 20px;
 }
 
@@ -560,13 +581,13 @@ span {
 
 /* Sidebar Song List Styling */
 .song-list {
-    margin: 20px 10px 10px 20px;
+    margin: 10px 10px 10px 20px;
     padding: 0 10px 0 0;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    max-height: calc(100% - 40px);
-    overflow-y: auto;
+    /* let `.library` be the scroll container; ensure song-list grows to fill available space */
+    flex: 1 1 auto;
     overflow-x: hidden;
 }
 
@@ -611,6 +632,19 @@ span {
     gap: 20px;
     padding: 0 40px;
     box-sizing: border-box;
+}
+
+/* Ensure the three areas line up horizontally: album left, player center, controls right */
+.music-player .album {
+    justify-self: start;
+}
+
+.music-player .player {
+    justify-self: center;
+}
+
+.music-player .controls {
+    justify-self: end;
 }
 
 /* Column 1: LEFT - Song Info (Album + Title) */

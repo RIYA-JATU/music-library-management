@@ -4,31 +4,43 @@ const songs = [
         title: "Breathe Future Garage",
         artist: "Cascade",
         src: "assets/mp3/cascade-breathe-future-garage-412839.mp3",
-        cover: "assets/card1img (1).jpeg"
+        cover: "assets/breathe.jpg"
     },
     {
         title: "Ambient Snowcap",
-        artist: "Deep Abstract",
+        artist: "Grace Jordan",
         src: "assets/mp3/deep-abstract-ambient_snowcap-401656.mp3",
-        cover: "assets/card2img (1).jpeg"
+        cover: "assets/deep-abstract.jpg"
     },
     {
         title: "Groovy Vibe",
-        artist: "Unknown",
+        artist: "George Benson",
         src: "assets/mp3/groovy-vibe-427121.mp3",
-        cover: "assets/card3img (1).jpeg"
+        cover: "assets/groovy_vibes.webp"
     },
     {
         title: "Hype Drill Music",
-        artist: "Unknown",
+        artist: "King Louie",
         src: "assets/mp3/hype-drill-music-438398.mp3",
-        cover: "assets/card4img (1).jpeg"
+        cover: "assets/hype_drill.webp"
     },
     {
         title: "Sweet Life Luxury Chill",
-        artist: "Unknown",
+        artist: "Frank Ocean",
         src: "assets/mp3/sweet-life-luxury-chill-438146.mp3",
-        cover: "assets/card5img (1).jpeg"
+        cover: "assets/SweetLifeLuxuryChill.jpg"
+    },
+    {
+        title: "Jungle Waves",
+        artist: "Spec (BR)",
+        src: "assets/mp3/jungle-waves-drumampbass-electronic-inspiring-promo-345013.mp3",
+        cover: "assets/jugle-waves.jpg"
+    },
+    {
+        title: "Embrace",
+        artist: "Danny McNamara",
+        src: "assets/mp3/embrace-364091.mp3",
+        cover: "assets/embrace.jpg"
     }
 ];
 
